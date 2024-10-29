@@ -2,8 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mvc_practice/counter.dart';
 
 void main() {
+  //setUp時に変数が初期化されるよう、late修飾子で変数を宣言
   late Counter counter;
 
+  //各テストの実行前に毎回Counterクラスのインスタンスを生成し、counterに代入
   setUp(() {
     counter = Counter();
   });
