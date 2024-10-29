@@ -1,4 +1,10 @@
-class Counter {
+import 'package:flutter/material.dart';
+
+class Counter extends ChangeNotifier {
+  int get count => _count;
+
+  List<int> get counts => _counts;
+
   //カウント値
   int _count = 0;
 
@@ -13,12 +19,14 @@ class Counter {
   //カウント値をリストに追加する
   void append() {
     _counts.add(_count);
+    notifyListeners();
   }
 
   //カウント値とリストをクリアする
   void clear() {
     _count = 0;
     _counts.clear();
+    notifyListeners();
   }
 
   //カウント値のリストの合計を計算する
